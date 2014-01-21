@@ -7,9 +7,9 @@ Most of this information was taken from these two sources:
 - [[http://panks.me/blog/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
 
 ** Procedure
-*** Make bootable USB media with Arch ISO image ([[https://wiki.archlinux.org/index.php/USB_Flash_Installation_Media][wiki]])
-*** Hold the <alt/option> key and boot into USB
-*** Create partitions
+*** 1. Make bootable USB media with Arch ISO image ([[https://wiki.archlinux.org/index.php/USB_Flash_Installation_Media][wiki]])
+*** 2. Hold the <alt/option> key and boot into USB
+*** 3. Create partitions
 The following example assumes Arch will sit on a single partition;
 adjust according to preference.
 
@@ -23,14 +23,14 @@ cgdisk /dev/sda
 ***** [128MB] Apple HFS+ "Boot Loader"
 ***** [256MB] Linux filesystem "Boot"
 ***** [Rest of space] Linux filesystem "Root"
-*** Format and mount partitions
+*** 4. Format and mount partitions
 #+begin_src sh
 mkfs.ext4 /dev/sda5
 mkfs.ext4 /dev/sda6
 mount /dev/sda6 /mnt
 mkdir /mnt/boot && mount /dev/sda5 /mnt/boot
 #+end_src
-*** Installation
+*** 5. Installation
 This requires an internet connection. Options:
 - Tethered phone via USB (easiest IMO)
 - Wired (with some Apple proprietary ethernet thing ($$$?))
@@ -39,7 +39,7 @@ This requires an internet connection. Options:
 pacstrap /mnt base base-devel
 genfstab -p /mnt >> /mnt/etc/fstab
 #+end_src
-*** Optimize fstab for SSD
+*** 6. Optimize fstab for SSD
 #+begin_src sh
 nano /mnt/etc/fstab
 #+end_src
@@ -47,7 +47,7 @@ nano /mnt/etc/fstab
 /dev/sda6 /     ext4 defaults,noatime,discard,data=writeback 0 1
 /dev/sda5 /boot ext4 defaults,relatime,stripe=4              0 2
 #+end_example
-*** Configure system
+*** 7. Configure system
 #+begin_src sh
 arch-chroot /mnt /bin/bash
 echo myhostname > /etc/hostname
@@ -57,11 +57,11 @@ useradd -m -g users -G wheel -s /bin/bash myusername
 passwd myusername
 pacman -S sudo
 #+end_src
-*** Grant sudo
+*** 8. Grant sudo
 #+begin_src sh
 nano /etc/sudoers
 #+end_src
-*** Set up locale
+*** 9. Set up locale
 #+begin_src sh
 nano /etc/locale.gen
 #+end_src
@@ -70,12 +70,12 @@ locale-gen
 echo LANG=en_US.UTF8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 #+end_src
-*** Set up mkinitcpio hooks
+*** 10. Set up mkinitcpio hooks
 Insert "keyboard" after "autodetect" if it's not already there.
 #+begin_src sh
 nano /etc/mkinitcpio.conf
 #+end_src
-*** Set up GRUB/EFI
+*** 11. Set up GRUB/EFI
 To boot up the computer we will continue to use Apple's EFI
 bootloader, so we need GRUB-EFI:
 #+begin_src sh
@@ -102,16 +102,16 @@ grub-mkconfig -o boot/grub/grub.cfg
 # in recent GRUB2:
 grub-mkstandalone -o boot.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
 #+end_src
-*** Setup boot in OS X
+*** 12. Setup boot in OS X
 Exit everything and reboot into OS X (by holding alt/option) and
 then choosing it.
 #+begin_src sh
 exit # exit chroot
 reboot
 #+end_src
-*** Launch Disk Utility in OS X
+*** 13. Launch Disk Utility in OS X
 Format ("Erase") /dev/sda4 using Mac journaled filesystem
-*** Create boot file structure
+*** 14. Create boot file structure
 This procedure allows the Apple bootloader to see our Arch
 Linux system and present it as the default boot option.
 #+begin_src sh
@@ -140,7 +140,7 @@ nano SystemVersion.plist
 </dict>
 </plist>
 #+end_example
-*** Make Boot Loader partition bootable
+*** 15. Make Boot Loader partition bootable
 #+begin_src sh
 sudo bless --device /dev/disk0s4 --setBoot
 #+end_src
@@ -148,7 +148,7 @@ Voila, Arch Linux is installed.
 
 Reboot the computer and hold the alt/option key to
 select which operating system to boot.
-*** Get wireless working in Arch
+*** 16. Get wireless working in Arch
 **** Get broadcom drivers
 ***** Download and install [[https://aur.archlinux.org/packages/broadcom-wl/][broadcom from AUR]]
 (Make sure that b43 and ssb modules are not present in the output
@@ -169,7 +169,7 @@ sudo systemctl enable dkms.service
 sudo pacman -S dialog
 sudo wifi-menu -o
 #+end_src
-*** Tilde key
+*** 17. Tilde key
 The tilde key does not work on the keyboard out of the box. There
 are several solutions listed [[https://wiki.archlinux.org/index.php/Apple_Keyboard][here]] but this one worked for me:
 #+begin_src sh
@@ -178,7 +178,7 @@ sudo nano /etc/modprobe.d/hid_apple.conf
 #+begin_example
 options hid_apple iso_layout=0
 #+end_example
-*** Insert and <F1..12> keys
+*** 18. Insert and <F1..12> keys
 The <insert> key can be reproduced with fn+<Enter>. So to paste in an xterm
 window for instance, use S-fn-<Enter>.
 
