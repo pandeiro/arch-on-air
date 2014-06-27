@@ -37,7 +37,7 @@ This requires an internet connection. Options:
 - Wireless (requires b43 wireless firmware ([[https://aur.archlinux.org/packages/b43-firmware/][AUR]]))
 #+begin_src sh
 pacstrap /mnt base base-devel
-genfstab -p /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 #+end_src
 *** 6. Optimize fstab for SSD
 #+begin_src sh
@@ -50,6 +50,7 @@ nano /mnt/etc/fstab
 *** 7. Configure system
 #+begin_src sh
 arch-chroot /mnt /bin/bash
+passwd
 echo myhostname > /etc/hostname
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc --utc
@@ -59,7 +60,7 @@ pacman -S sudo
 #+end_src
 *** 8. Grant sudo
 #+begin_src sh
-nano /etc/sudoers
+echo "myusername ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 #+end_src
 *** 9. Set up locale
 #+begin_src sh
@@ -98,10 +99,9 @@ GRUB_DISABLE_SUBMENU=y
 #+end_example
 #+begin_src sh
 grub-mkconfig -o boot/grub/grub.cfg
-# if -C option does not exist, try --compress or --core-compress... This seems to have changed
-# in recent GRUB2:
-grub-mkstandalone -o boot.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
+grub-mkstandalone -o boot.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi --compress=xz boot/grub/grub.cfg
 #+end_src
+Copy boot.efi (generated in the command above) to a USB stick for use later in OS X.
 *** 12. Setup boot in OS X
 Exit everything and reboot into OS X (by holding alt/option) and
 then choosing it.
@@ -139,6 +139,19 @@ nano SystemVersion.plist
     <string>Arch Linux</string>
 </dict>
 </plist>
+#+end_example
+Copy boot.efi from your USB stick to this CoreServices directory. 
+The tree should look like this:
+#+begin_example
+|___mach_kernel
+|___System
+       |
+       |___Library
+              |
+              |___CoreServices
+                      |
+                      |___SystemVersion.plist
+                      |___boot.efi
 #+end_example
 *** 15. Make Boot Loader partition bootable
 #+begin_src sh
