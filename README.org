@@ -50,6 +50,7 @@ nano /mnt/etc/fstab
 *** 7. Configure system
 #+begin_src sh
 arch-chroot /mnt /bin/bash
+passwd
 echo myhostname > /etc/hostname
 ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc --utc
