@@ -37,7 +37,7 @@ This requires an internet connection. Options:
 - Wireless (requires b43 wireless firmware ([[https://aur.archlinux.org/packages/b43-firmware/][AUR]]))
 #+begin_src sh
 pacstrap /mnt base base-devel
-genfstab -p /mnt >> /mnt/etc/fstab
+genfstab -U -p /mnt >> /mnt/etc/fstab
 #+end_src
 *** 6. Optimize fstab for SSD
 #+begin_src sh
