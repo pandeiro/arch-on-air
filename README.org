@@ -60,7 +60,7 @@ pacman -S sudo
 #+end_src
 *** 8. Grant sudo
 #+begin_src sh
-nano /etc/sudoers
+echo "myusername ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 #+end_src
 *** 9. Set up locale
 #+begin_src sh
