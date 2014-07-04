@@ -76,6 +76,10 @@ Insert "keyboard" after "autodetect" if it's not already there.
 #+begin_src sh
 nano /etc/mkinitcpio.conf
 #+end_src
+Then run it:
+#+begin_src sh
+mkinitcpio -p linux
+#+end_src
 *** 11. Set up GRUB/EFI
 To boot up the computer we will continue to use Apple's EFI
 bootloader, so we need GRUB-EFI:
