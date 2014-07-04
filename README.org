@@ -71,7 +71,7 @@ locale-gen
 echo LANG=en_US.UTF8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 #+end_src
-*** 10. Set up mkinitcpio hooks
+*** 10. Set up mkinitcpio hooks and run
 Insert "keyboard" after "autodetect" if it's not already there.
 #+begin_src sh
 nano /etc/mkinitcpio.conf
