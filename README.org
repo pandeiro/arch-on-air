@@ -3,7 +3,7 @@ Instructions for installing Arch Linux side-by-side with OS X on
 a Macbook Air 2013.
 
 Most of this information was taken from these two sources:
-- [[https://bbs.archlinux.org/viewtopic.php?id%3D165899][ArchLinux Forums: Macbook Air 2013]]
+- [[https://bbs.archlinux.org/viewtopic.php?id=165899][ArchLinux Forums: Macbook Air 2013]]
 - [[http://panks.me/blog/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
 
 ** Procedure
