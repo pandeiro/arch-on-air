@@ -200,3 +200,7 @@ The <insert> key can be reproduced with fn+<Enter>. So to paste in an xterm
 window for instance, use S-fn-<Enter>.
 
 F1-F12 require fn+<F1>, etc.
+** Additional Links
+There are other folks who have blogged about this process since I started this:
+- [Installing Archlinux on Macbook Air 2013 - Frank Shin](http://frankshin.com/installing-archlinux-on-macbook-air-2013/)
+- [Arch Linux – MacBook Air 2013 | Ryan Gehrig](http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/)
