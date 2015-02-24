@@ -186,7 +186,8 @@ sudo systemctl enable dkms.service
 sudo pacman -S dialog
 sudo wifi-menu -o
 #+end_src
-*** 17. Tilde key
+*** 17. Access common keys
+**** Tilde key
 The tilde key does not work on the keyboard out of the box. There
 are several solutions listed [[https://wiki.archlinux.org/index.php/Apple_Keyboard][here]] but this one worked for me:
 #+begin_src sh
@@ -195,7 +196,7 @@ sudo nano /etc/modprobe.d/hid_apple.conf
 #+begin_example
 options hid_apple iso_layout=0
 #+end_example
-*** 18. Insert and <F1..12> keys
+**** Insert and <F1..12> keys
 The <insert> key can be reproduced with fn+<Enter>. So to paste in an xterm
 window for instance, use S-fn-<Enter>.
 
