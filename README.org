@@ -201,6 +201,17 @@ The <insert> key can be reproduced with fn+<Enter>. So to paste in an xterm
 window for instance, use S-fn-<Enter>.
 
 F1-F12 require fn+<F1>, etc.
+*** 18. Improve battery performance
+Out-of-the-box battery performance on Arch Linux should be good and at
+least comparable to OS X.
+
+If you want to try to improve battery life, there are two recommended packages
+documented in the ArchWiki:
+- [[https://01.org/powertop][PowerTOP]]: a tool provided by Intel to enable various powersaving
+  modes in userspace, kernel and hardware, *available in the official
+  repositories*. ([[https://wiki.archlinux.org/index.php/Powertop][ArchWiki]])
+- [[https://aur.archlinux.org/packages/powerdown-git/][Powerdown]]: a collection of power-saving scripts *available in AUR*.
+  ([[https://wiki.archlinux.org/index.php/Powerdown][ArchWiki]])
 ** Additional Links
 There are other folks who have blogged about this process since I started this:
 - [Installing Archlinux on Macbook Air 2013 - Frank Shin](http://frankshin.com/installing-archlinux-on-macbook-air-2013/)
