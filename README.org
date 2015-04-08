@@ -32,7 +32,7 @@ mkdir /mnt/boot && mount /dev/sda5 /mnt/boot
 #+end_src
 *** 5. Installation
 This requires an internet connection. Options:
-- Tethered phone via USB (easiest IMO)
+- Tethered phone via USB ([[https://wiki.archlinux.org/index.php/Android_tethering][instructions for Android]], [[https://wiki.archlinux.org/index.php/IPhone_Tethering][instructions for iPhone]])
 - Wired (with some Apple proprietary ethernet thing ($$$?))
 - Wireless (requires b43 wireless firmware ([[https://aur.archlinux.org/packages/b43-firmware/][AUR]]))
 #+begin_src sh
