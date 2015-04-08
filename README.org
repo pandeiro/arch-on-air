@@ -214,5 +214,5 @@ documented in the ArchWiki:
   ([[https://wiki.archlinux.org/index.php/Powerdown][ArchWiki]])
 ** Additional Links
 There are other folks who have blogged about this process since I started this:
-- [Installing Archlinux on Macbook Air 2013 - Frank Shin](http://frankshin.com/installing-archlinux-on-macbook-air-2013/)
-- [Arch Linux – MacBook Air 2013 | Ryan Gehrig](http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/)
+- [[http://frankshin.com/installing-archlinux-on-macbook-air-2013/][Installing Archlinux on Macbook Air 2013 - Frank Shin]]
+- [[http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/][Arch Linux – MacBook Air 2013 | Ryan Gehrig]]
