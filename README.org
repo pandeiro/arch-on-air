@@ -60,7 +60,7 @@ pacman -S sudo
 #+end_src
 *** 8. Grant sudo
 #+begin_src sh
-echo "myusername ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/10-grant-wheel-group
 #+end_src
 *** 9. Set up locale
 #+begin_src sh
