@@ -4,7 +4,7 @@ a Macbook Air 2013.
 
 Most of this information was taken from these two sources:
 - [[https://bbs.archlinux.org/viewtopic.php?id=165899][ArchLinux Forums: Macbook Air 2013]]
-- [[http://panks.me/blog/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
+- [[http://panks.me/posts/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
 
 ** Procedure
 *** 1. Make bootable USB media with Arch ISO image ([[https://wiki.archlinux.org/index.php/USB_Flash_Installation_Media][wiki]])
