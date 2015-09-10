@@ -210,9 +210,9 @@ documented in the ArchWiki:
 - [[https://01.org/powertop][PowerTOP]]: a tool provided by Intel to enable various powersaving
   modes in userspace, kernel and hardware, *available in the official
   repositories*. ([[https://wiki.archlinux.org/index.php/Powertop][ArchWiki]])
-- [[https://aur.archlinux.org/packages/powerdown-git/][Powerdown]]: a collection of power-saving scripts *available in AUR*.
-  ([[https://wiki.archlinux.org/index.php/Powerdown][ArchWiki]])
+- [[http://linrunner.de/en/tlp/tlp.html][TLP]]: a collection of power-saving scripts *available in the official repositories*.
+  ([[https://wiki.archlinux.org/index.php/TLP][ArchWiki]])
 ** Additional Links
 There are other folks who have blogged about this process since I started this:
 - [[http://frankshin.com/installing-archlinux-on-macbook-air-2013/][Installing Archlinux on Macbook Air 2013 - Frank Shin]]
-- [[http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/][Arch Linux – MacBook Air 2013 | Ryan Gehrig]]
+- [[http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/][Arch Linux – MacBook Air 2013 | Ryan Gehrig]] (broken)
