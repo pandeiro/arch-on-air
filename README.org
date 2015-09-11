@@ -4,7 +4,7 @@ a Macbook Air 2013.
 
 Most of this information was taken from these two sources:
 - [[https://bbs.archlinux.org/viewtopic.php?id=165899][ArchLinux Forums: Macbook Air 2013]]
-- [[http://panks.me/blog/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
+- [[http://panks.me/posts/2013/06/arch-linux-installation-with-os-x-on-macbook-air-dual-boot/][ArchLinux Installation With OS X on Macbook Air (Dual Boot)]]
 
 ** Procedure
 *** 1. Make bootable USB media with Arch ISO image ([[https://wiki.archlinux.org/index.php/USB_Flash_Installation_Media][wiki]])
@@ -210,9 +210,9 @@ documented in the ArchWiki:
 - [[https://01.org/powertop][PowerTOP]]: a tool provided by Intel to enable various powersaving
   modes in userspace, kernel and hardware, *available in the official
   repositories*. ([[https://wiki.archlinux.org/index.php/Powertop][ArchWiki]])
-- [[https://aur.archlinux.org/packages/powerdown-git/][Powerdown]]: a collection of power-saving scripts *available in AUR*.
-  ([[https://wiki.archlinux.org/index.php/Powerdown][ArchWiki]])
+- [[http://linrunner.de/en/tlp/tlp.html][TLP]]: a collection of power-saving scripts *available in the official repositories*.
+  ([[https://wiki.archlinux.org/index.php/TLP][ArchWiki]])
 ** Additional Links
 There are other folks who have blogged about this process since I started this:
 - [[http://frankshin.com/installing-archlinux-on-macbook-air-2013/][Installing Archlinux on Macbook Air 2013 - Frank Shin]]
-- [[http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/][Arch Linux – MacBook Air 2013 | Ryan Gehrig]]
+- [[http://ryangehrig.com/index.php/arch-linux-on-macbook-air-2013/][Arch Linux – MacBook Air 2013 | Ryan Gehrig]] (broken)
