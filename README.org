@@ -30,6 +30,16 @@ mkfs.ext4 /dev/sda6
 mount /dev/sda6 /mnt
 mkdir /mnt/boot && mount /dev/sda5 /mnt/boot
 #+end_src
+If you plan to use any memory-heavy applications (which includes
+most web browsers), it's a good idea to create either a [[https://wiki.archlinux.org/index.php/Swap#Swap_partition][swap partition]]
+or a swapfile for system stability. Swapfiles are easier to
+resize or remove if you change your mind, so we'll create
+a 512M one:
+#+begin_src sh
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=512
+chmod 600 /mnt/swapfile
+mkswap /mnt/swapfile
+#+end_src
 *** 5. Installation
 This requires an internet connection. Options:
 - Tethered phone via USB ([[https://wiki.archlinux.org/index.php/Android_tethering][instructions for Android]], [[https://wiki.archlinux.org/index.php/IPhone_Tethering][instructions for iPhone]])
@@ -39,13 +49,14 @@ This requires an internet connection. Options:
 pacstrap /mnt base base-devel
 genfstab -U -p /mnt >> /mnt/etc/fstab
 #+end_src
-*** 6. Optimize fstab for SSD
+*** 6. Optimize fstab for SSD, add swap
 #+begin_src sh
 nano /mnt/etc/fstab
 #+end_src
 #+begin_example
 /dev/sda6 /     ext4 defaults,noatime,discard,data=writeback 0 1
 /dev/sda5 /boot ext4 defaults,relatime,stripe=4              0 2
+/swapfile none  swap defaults                                0 0
 #+end_example
 *** 7. Configure system
 #+begin_src sh
