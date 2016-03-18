@@ -172,6 +172,13 @@ The tree should look like this:
 #+begin_src sh
 sudo bless --device /dev/disk0s4 --setBoot
 #+end_src
+
+You may need to disable the System Integrity Projection of OS X:
+- Restart the computer, while booting hold down Command-R to boot into recovery mode.
+- Once booted, navigate to the “Utilities > Terminal” in the top menu bar.
+- Enter "csrutil disable" in the terminal window and hit the return key.
+- Restart the machine and System Integrity Protection will now be disabled.
+
 Voila, Arch Linux is installed.
 
 Reboot the computer and hold the alt/option key to
