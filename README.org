@@ -20,9 +20,9 @@ do that properly is left as an exercise to the reader.
 cgdisk /dev/sda
 #+end_src
 **** Partitions:
-***** [128MB] Apple HFS+ "Boot Loader"
-***** [256MB] Linux filesystem "Boot"
-***** [Rest of space] Linux filesystem "Root"
+***** /dev/sda4 - [128MB] Apple HFS+ "Boot Loader"
+***** /dev/sda5 - [256MB] Linux filesystem "Boot"
+***** /dev/sda6 - [Rest of space] Linux filesystem "Root"
 *** 4. Format and mount partitions
 #+begin_src sh
 mkfs.ext4 /dev/sda5
