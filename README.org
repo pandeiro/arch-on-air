@@ -79,7 +79,7 @@ nano /etc/locale.gen
 #+end_src
 #+begin_src sh
 locale-gen
-echo LANG=en_US.UTF8 > /etc/locale.conf
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 #+end_src
 *** 10. Set up mkinitcpio hooks and run
